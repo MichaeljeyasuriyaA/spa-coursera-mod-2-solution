@@ -5,7 +5,7 @@ angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItems', FoundItemsDirective)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
 
 
 NarrowItDownController.$inject = ['MenuSearchService'];
@@ -36,7 +36,7 @@ function FoundItemsDirective() {
       onRemove: '&'
     },
     controller: FoundItemsDirectiveController,
-    controllerAs: 'foundCtl',
+    controllerAs: 'foundCtrl',
     bindToController: true
   };
 
@@ -44,10 +44,10 @@ function FoundItemsDirective() {
 }
 
 function FoundItemsDirectiveController() {
-  var foundCtl = this;
+  var foundCtrl = this;
 
-  foundCtl.isNothingFound = function() {
-    if (foundCtl.items.length === 0) {
+  foundCtrl.isNothingFound = function() {
+    if (foundCtrl.items.length === 0) {
       return true;
     }
     return false;
